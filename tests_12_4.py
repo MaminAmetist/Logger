@@ -15,7 +15,7 @@ class RunnerTest(unittest.TestCase):
         self.obj_walk = runner.Runner('Ann', 5)
         self.obj_run = runner.Runner('Maks', 5)
 
-        def test_walk(self):
+    def test_walk(self):
         """Test for walk"""
         try:
             for _ in range(10):
@@ -23,7 +23,7 @@ class RunnerTest(unittest.TestCase):
             self.assertEqual(self.obj_walk.distance, 50)
             logging.warning('"test_walk" выполнен успешно.')
         except TypeError and ValueError as err:
-            logging.error(err,'Неверная скорость для Runner', exc_info=True)  # логируйте его на уровне WARNING
+            logging.error(err('Неверная скорость для Runner'), exc_info=True)  # логируйте его на уровне WARNING
 
     def test_run(self):
         """Test for run"""
@@ -33,8 +33,8 @@ class RunnerTest(unittest.TestCase):
             self.assertEqual(self.obj_run.distance, 100)
             logging.warning('"test_run" выполнен успешно.')
         except TypeError and ValueError as err:
-            logging.error(err, 'Неверный тип данных для объекта Runner', exc_info=True)  # логируйте его на уровне WARNING
-
+            logging.error(err('Неверный тип данных для объекта Runner'),
+                          exc_info=True)  # логируйте его на уровне WARNING
     def test_challenge(self):
         """Test walk == run"""
         for _ in range(10):
