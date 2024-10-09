@@ -34,15 +34,3 @@ class RunnerTest(unittest.TestCase):
         except (TypeError, ValueError) as err:
             logging.error('Неверный тип данных для объекта Runner', exc_info=True)
 
-                self.obj_run.run()
-            self.assertEqual(self.obj_run.distance, 100)
-            logging.warning('"test_run" выполнен успешно.')
-        except (TypeError, ValueError, AssertionError) as err:
-            logging.error(err('Неверный тип данных для объекта Runner'),
-                          exc_info=True)  # логируйте его на уровне WARNING
-    def test_challenge(self):
-        """Test walk == run"""
-        for _ in range(10):
-            self.obj_run.walk()
-            self.obj_walk.run()
-        self.assertNotEqual(self.obj_run.distance, self.obj_walk.distance)
