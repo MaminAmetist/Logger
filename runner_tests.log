@@ -1,2 +1,16 @@
-2024-10-07 20:58:44,837 | WARNING | test_run: 35 | "test_run" выполнен успешно.
-2024-10-07 20:58:44,838 | WARNING | test_walk: 24 | "test_walk" выполнен успешно.
+2024-10-09 20:00:01,388 | ERROR | test_run: 38 | Неверный тип данных для объекта Runner
+Traceback (most recent call last):
+  File "C:\Users\1111\PycharmProjects\pythonProject1\module 12\tests_12_4.py", line 32, in test_run
+    self.obj_run = runner.Runner(['Maks'], 5)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\1111\PycharmProjects\pythonProject1\module 12\rt_with_exceptions.py", line 6, in __init__
+    raise TypeError(f'Имя может быть только строкой, передано {type(name).__name__}')
+TypeError: Имя может быть только строкой, передано list
+2024-10-09 20:00:01,390 | ERROR | test_walk: 26 | Неверная скорость для Runner
+Traceback (most recent call last):
+  File "C:\Users\1111\PycharmProjects\pythonProject1\module 12\tests_12_4.py", line 20, in test_walk
+    self.obj_walk = runner.Runner('Ann', -5)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\1111\PycharmProjects\pythonProject1\module 12\rt_with_exceptions.py", line 11, in __init__
+    raise ValueError(f'Скорость не может быть отрицательной, сейчас {speed}')
+ValueError: Скорость не может быть отрицательной, сейчас -5
